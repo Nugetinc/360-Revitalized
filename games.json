@@ -7,11 +7,14 @@
         "games/codbo.json",
         "games/halo3.json",
         "games/codboII.json",
-        "games/skyrim.json"
+        "games/skyrim.json",
+        "games/codmw2.json",
+        "games/gtaiv.json",
+        "games/codghosts.json"
     ],
     "dlcs": [
           "dlcs/minecraft/at.json",
-          "dlc2.json"
+          "dlcs/minecraft/ab.json"
         ]
 
 }
