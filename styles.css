@@ -1,0 +1,213 @@
+/* Load Xbox 360 Font */
+@font-face {
+    font-family: 'Xbox360';
+    src: url('fonts/xbox360.ttf') format('truetype');
+}
+
+
+
+/* General */
+body {
+    
+    background: linear-gradient(to bottom, #39393b, #9d9d9d, #7e7e80);
+    background-size: cover;
+    color: black;
+    font-family: 'Xbox360', 'Segoe UI', sans-serif;
+    margin: 10;
+    overflow-x: visible;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e1e1e;
+    padding: 10px 20px;
+    border-bottom: 2px solid #107c10;
+}
+
+.header h1 {
+    font-size: 22px;
+    color: white;
+    font-weight: normal;
+}
+
+.header p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Sort Bar */
+.sort-bar {
+    background: #333;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: white;
+    border-bottom: 2px solid #107c10;
+}
+
+.sort-bar strong {
+    color: #32cd32;
+}
+
+.game-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.game-tile {
+    width: 160px;
+    background: white;
+    padding: 10px;
+    border-radius: 1px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+    border: 2px solid transparent;
+}
+
+.game-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    border-color: #32cd32;
+}
+
+.game-tile img {
+    width: 100%;
+    border-radius: 1px;
+}
+
+.game-tile h3 {
+    font-size: 14px;
+    margin: 8px 0 4px;
+    font-weight: normal;
+    color: black;
+}
+
+.game-tile .platform {
+    font-size: 12px;
+    color: #32cd32;
+    font-weight: bold;
+}
+
+.game-tile .rating {
+    font-size: 12px;
+    color: #fff;
+}
+
+/* Ensure modal covers the full screen without a dark block */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Make this less opaque */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Fix gradient to avoid a solid dark block */
+.modal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 0.9) 100%);
+    pointer-events: none;
+}
+
+/* Stretch the modal content to prevent cut-offs */
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    height: 620px; /* Adjust height to take more space */
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    font-size: 25px;
+    margin: 8px 0 4px;
+    font-weight: normal;
+    color: white;
+}
+
+/* When modal is shown, fade in */
+.modal.show .modal-content {
+    opacity: 1;
+}
+
+
+
+/* Gradient effect for the modal background */
+.modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+    pointer-events: none; /* Ensure it doesn't interfere with content */
+    border-radius: 5px; /* Make the gradient match the content border-radius */
+}
+
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ccc;
+}
+
+/* Download Button */
+.download-btn {
+    display: inline-block;
+    text-align: center;
+    background: #107c10;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background: #0e6c0e;
+}
+
+.category {
+    margin: 20px 0;
+}
+
+.category h2 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.game-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}

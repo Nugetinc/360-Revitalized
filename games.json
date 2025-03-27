@@ -1,0 +1,17 @@
+{
+    "games": [
+        "games/kinectadventures.json",
+        "games/gtav.json",
+        "games/minecraft.json",
+        "games/codmw3.json",
+        "games/codbo.json",
+        "games/halo3.json",
+        "games/codboII.json",
+        "games/skyrim.json"
+    ],
+    "dlcs": [
+          "dlcs/minecraft/at.json",
+          "dlc2.json"
+        ]
+
+}
