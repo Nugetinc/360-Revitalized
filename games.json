@@ -11,7 +11,9 @@
         "games/gtaiv.json",
         "games/codghosts.json",
         "games/haloreach.json",
-        "games/halo4.json"
+        "games/halo4.json",
+        "games/mcsm.json"
+        
     ],
     "dlcs": [
           "dlcs/minecraft/at.json",
@@ -24,6 +26,7 @@
     "xbla": [
           "xbla/shadowcomplex.json",
           "xbla/castlecrashers.json",
-          "xbla/geometrywars2.json"
+          "xbla/geometrywars2.json",
+          "games/battleblocktheater.json"
         ]
 }
