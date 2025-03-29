@@ -2,7 +2,6 @@
     "games": [
         "games/kinectadventures.json",
         "games/gtav.json",
-        "games/minecraft.json",
         "games/codmw3.json",
         "games/codbo.json",
         "games/halo3.json",
@@ -17,6 +16,8 @@
     "dlcs": [
           "dlcs/minecraft/at.json",
           "dlcs/minecraft/ab.json"
+        ],
+    "xbla": [
+          "xbla/minecraft.json"
         ]
-
 }

@@ -2,21 +2,22 @@ async function loadGames() {
     const response = await fetch("games.json");
     const data = await response.json();
 
-    // Load Games
     const gameContainer = document.getElementById("gameList");
-    gameContainer.innerHTML = "";
-    for (const gameFile of data.games) {
-        const gameData = await fetch(gameFile).then(res => res.json());
-        createGameTile(gameData, "game");
-    }
-
-    // Load DLCs
     const dlcContainer = document.getElementById("dlcList");
+    const xblaContainer = document.getElementById("xblaList");
+
+    gameContainer.innerHTML = "";
     dlcContainer.innerHTML = "";
-    for (const dlcFile of data.dlcs) {
-        const dlcData = await fetch(dlcFile).then(res => res.json());
-        createGameTile(dlcData, "dlc");
-    }
+    xblaContainer.innerHTML = "";
+
+    // Load all game data in parallel
+    const gameData = await Promise.all(data.games.map(gameFile => fetch(gameFile).then(res => res.json())));
+    const dlcData = await Promise.all(data.dlcs.map(dlcFile => fetch(dlcFile).then(res => res.json())));
+    const xblaData = await Promise.all(data.xbla.map(xblaFile => fetch(xblaFile).then(res => res.json())));
+
+    gameData.forEach(game => createGameTile(game, "game"));
+    dlcData.forEach(dlc => createGameTile(dlc, "dlc"));
+    xblaData.forEach(xbla => createGameTile(xbla, "xbla"));
 }
 
 function createGameTile(item, category) {
@@ -26,13 +27,17 @@ function createGameTile(item, category) {
         <img src="${item.image}" alt="${item.title}">
         <h3>${item.title}</h3>
     `;
-    gameTile.onclick = () => openModal(item, category);
+    gameTile.onclick = () => openModal(item);
+
     if (category === "game") {
         document.getElementById("gameList").appendChild(gameTile);
-    } else {
+    } else if (category === "dlc") {
         document.getElementById("dlcList").appendChild(gameTile);
+    } else {
+        document.getElementById("xblaList").appendChild(gameTile);
     }
 }
+
 
 function openModal(item, category) {
     const modal = document.getElementById("gameModal");
