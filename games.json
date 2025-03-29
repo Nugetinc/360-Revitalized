@@ -18,6 +18,8 @@
           "dlcs/minecraft/ab.json"
         ],
     "xbla": [
-          "xbla/minecraft.json"
+          "xbla/shadowcomplex.json",
+          "xbla/castlecrashers.json",
+          "xbla/geometrywars2.json"
         ]
 }
