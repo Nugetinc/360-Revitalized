@@ -15,7 +15,11 @@
     ],
     "dlcs": [
           "dlcs/minecraft/at.json",
-          "dlcs/minecraft/ab.json"
+          "dlcs/minecraft/ab.json",
+          "dlcs/castlecrashers/kingpack.json",
+          "dlcs/castlecrashers/necropack.json",
+          "dlcs/castlecrashers/blacksmithpack.json",
+          "dlcs/castlecrashers/pinkknight.json"
         ],
     "xbla": [
           "xbla/shadowcomplex.json",
