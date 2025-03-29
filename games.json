@@ -10,7 +10,9 @@
         "games/skyrim.json",
         "games/codmw2.json",
         "games/gtaiv.json",
-        "games/codghosts.json"
+        "games/codghosts.json",
+        "games/haloreach.json",
+        "games/halo4.json"
     ],
     "dlcs": [
           "dlcs/minecraft/at.json",
