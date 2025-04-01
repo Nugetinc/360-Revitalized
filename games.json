@@ -12,7 +12,8 @@
         "games/codghosts.json",
         "games/haloreach.json",
         "games/halo4.json",
-        "games/mcsm.json"
+        "games/mcsm.json",
+      "games/reddeadredemption.json"
         
     ],
     "dlcs": [
