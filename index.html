@@ -14,41 +14,38 @@
         <p>Created By Nuget.</p>
     </div>
 
-   <!-- Sort Bar -->
-<div class="sort-bar">
-    <p>Most Popular<strong></strong></p>
-</div>
-
-<!-- Game Categories -->
-<div class="category">
-    <h2>Games</h2>
-    <main class="game-grid" id="gameList"></main>
-</div>
-
-<div class="category">
-    <h2>XBLA</h2>
-    <main class="game-grid" id="xblaList"></main>
-</div>
-
-<div class="category">
-    <h2>DLCs</h2>
-    <main class="game-grid" id="dlcList"></main>
-</div>
-
-
-
-<!-- Game Modal -->
-<div id="gameModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 id="gameTitle"></h2>
-        <p id="gameDescription"></p>
-        <a id="downloadLink" href="#" target="_blank" class="download-btn">Download</a>
+    <!-- Sort Bar -->
+    <div class="sort-bar">
+        <p>Most Popular<strong></strong></p>
     </div>
-</div>
 
+    <!-- Game Categories -->
+    <div class="category">
+        <h2>Games</h2>
+        <main class="game-grid" id="gameList"></main>
+    </div>
+
+    <div class="category">
+        <h2>XBLA</h2>
+        <main class="game-grid" id="xblaList"></main>
+    </div>
+
+    <div class="category">
+        <h2>DLCs</h2>
+        <main class="game-grid" id="dlcList"></main>
+    </div>
+
+    <!-- Game Modal -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="gameLogo" class="modal-logo" src="" alt="Game Logo">
+            <p id="gameDescription"></p>
+            <div id="gameScreenshots" class="screenshot-gallery"></div>
+            <a id="downloadLink" href="#" target="_blank" class="download-btn">Download</a>
+        </div>
+    </div>
 
     <script src="script.js"></script>
-
 </body>
 </html>

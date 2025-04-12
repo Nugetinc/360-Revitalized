@@ -100,7 +100,6 @@ body {
     color: #fff;
 }
 
-/* Ensure modal covers the full screen without a dark block */
 .modal {
     display: none;
     position: fixed;
@@ -114,56 +113,28 @@ body {
     overflow: hidden;
 }
 
-/* Fix gradient to avoid a solid dark block */
-.modal::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 0.9) 100%);
-    pointer-events: none;
-}
-
-/* Stretch the modal content to prevent cut-offs */
 .modal-content {
     position: relative;
-    width: 100%;
-    max-width: 1920px;
-    height: 620px; /* Adjust height to take more space */
-    background-size: cover;
-    background-position: center;
-    border-radius: 5px;
-    overflow: hidden;
+    width: 90%;
+    max-width: 800px;
+    background: #2f2f2f;
+    border-radius: 10px;
+    padding: 30px;
     opacity: 0;
     transition: opacity 0.5s ease;
-    font-size: 25px;
-    margin: 8px 0 4px;
-    font-weight: normal;
     color: white;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+
 
 /* When modal is shown, fade in */
 .modal.show .modal-content {
     opacity: 1;
 }
-
-
-
-/* Gradient effect for the modal background */
-.modal-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
-    pointer-events: none; /* Ensure it doesn't interfere with content */
-    border-radius: 5px; /* Make the gradient match the content border-radius */
-}
-
 
 .close {
     float: right;
@@ -210,4 +181,91 @@ body {
     justify-content: center;
     gap: 15px;
     padding: 20px;
+}
+
+.modal-logo {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto 20px;
+    border-radius: 4px;
+}
+
+.screenshot-gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+    justify-content: center;
+}
+
+.screenshot-gallery img {
+    height: 120px;
+    border-radius: 3px;
+    border: 2px solid #107c10;
+    transition: transform 0.3s ease;
+}
+
+.screenshot-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Global fade and scale transition */
+* {
+    transition: all 0.2s ease;
+}
+
+/* Header pulse effect */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.03); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.header h1 {
+    animation: pulse 3s infinite ease-in-out;
+}
+
+/* Tile entry animation */
+@keyframes tile-pop {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.game-tile {
+    animation: tile-pop 0.3s ease forwards;
+    opacity: 0;
+}
+
+/* Modal pop-in animation */
+@keyframes modal-pop {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal.show .modal-content {
+    animation: modal-pop 0.4s ease forwards;
+}
+
+/* Button hover glow effect */
+.download-btn {
+    transform: scale(1);
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.download-btn:hover {
+    background: #0e6c0e;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px #32cd32;
 }

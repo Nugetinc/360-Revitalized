@@ -28,6 +28,7 @@
           "xbla/shadowcomplex.json",
           "xbla/castlecrashers.json",
           "xbla/geometrywars2.json",
-          "games/battleblocktheater.json"
+          "xbla/minecraft.json",
+          "xbla/battleblocktheater.json"
         ]
 }

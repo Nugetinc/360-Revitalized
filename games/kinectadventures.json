@@ -2,6 +2,13 @@
     "title": "Kinect Adventures",
     "description": "You and your friends and family will jump, dodge, and kick your way through 20 pulse-pounding adventures.",
     "image": "https://ia800503.us.archive.org/28/items/xboxunity-covers-fulldump_202311/xboxunity-covers-fulldump/4D5308ED/18770/front.png",
-    "hero": "https://cdn2.steamgriddb.com/hero/74393c9c321d6dbc504a2d12530bbbb9.png",
+    "logo": "https://cdn2.steamgriddb.com/logo/167b07d756acd5b288f3b8ad0e06673f.png",
+    "screenshots": [
+      "https://media.rawg.io/media/resize/1920/-/screenshots/9f3/9f37c6eb1f59bd4a8847e1a2e87ecad1.jpg",
+      "https://media.rawg.io/media/resize/1920/-/screenshots/240/240b24ed3ff151167748e4d728d2c123.jpg",
+      "https://media.rawg.io/media/resize/1920/-/screenshots/be3/be366a6a0579721bb516c9050b91e930.jpg"
+    ],
+    "platform": "Xbox 360",
     "download": "https://myrient.erista.me/files/Redump/Microsoft%20-%20Xbox%20360/Kinect%20Adventures%21%20%28USA%29%20%28Rev%202%29.zip"
-}
+  }
+  
