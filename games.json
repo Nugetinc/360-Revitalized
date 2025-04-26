@@ -1,20 +1,17 @@
 {
     "games": [
-        "games/kinectadventures.json",
-        "games/gtav.json",
-        "games/codmw3.json",
-        "games/codbo.json",
-        "games/halo3.json",
-        "games/codboII.json",
-        "games/skyrim.json",
-        "games/codmw2.json",
-        "games/gtaiv.json",
-        "games/codghosts.json",
-        "games/haloreach.json",
-        "games/halo4.json",
-        "games/mcsm.json",
-      "games/reddeadredemption.json"
-        
+      "games/415608C3.json",
+      "games/415608CB.json",
+      "games/415608FC.json",
+      "games/41560817.json",
+      "games/41560855.json",
+      "games/4541080F.json",
+      "games/4D5307E6.json",
+      "games/4D5308ED.json",
+      "games/545408A7.json",
+      "games/5841149E.json",
+      "games/garlicbreadthegame.json"
+
     ],
     "dlcs": [
           "dlcs/minecraft/at.json",

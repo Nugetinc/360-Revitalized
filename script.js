@@ -17,20 +17,21 @@ fetch('games.json')
           tile.className = 'game-tile';
           tile.style.animationDelay = `${index * 50}ms`; // 👈 staggered pop-in
           tile.innerHTML = `
-            <img src="${game.image}" alt="${game.title}">
-            <h3>${game.title}</h3>
-            <div class="platform">${game.platform}</div>
+            <img src="${game.front}" alt="${game.name}">
+            <h3>${game.name}</h3>
+            <div class="platform">${game.titleid}</div>
           `;
           tile.addEventListener('click', () => showModal(game));
           container.appendChild(tile);
         });
     });
   }
-// Function to show the modal with game details  
+
+//show epic modals
 
 function showModal(game) {
   const modal = document.getElementById('gameModal');
-  document.getElementById('gameDescription').innerText = game.description;
+  document.getElementById('gameDescription').innerText = game.notes;
   document.getElementById('gameLogo').src = game.logo;
 
   const gallery = document.getElementById('gameScreenshots');
