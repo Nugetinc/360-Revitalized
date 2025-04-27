@@ -22,10 +22,7 @@
           "dlcs/castlecrashers/pinkknight.json"
         ],
     "xbla": [
-          "xbla/shadowcomplex.json",
-          "xbla/castlecrashers.json",
-          "xbla/geometrywars2.json",
-          "xbla/minecraft.json",
-          "xbla/battleblocktheater.json"
+          "xbla/58410A30.json",
+          ""
         ]
 }
