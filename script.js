@@ -6,28 +6,25 @@ fetch('games.json')
     loadCategory(data.dlcs, 'dlcList');
   });
 
-  
-  function loadCategory(gamePaths, containerId) {
-    const container = document.getElementById(containerId);
-    gamePaths.forEach((path, index) => {
-      fetch(path)
-        .then(res => res.json())
-        .then(game => {
-          const tile = document.createElement('div');
-          tile.className = 'game-tile';
-          tile.style.animationDelay = `${index * 50}ms`; // 👈 staggered pop-in
-          tile.innerHTML = `
-            <img src="${game.front}" alt="${game.name}">
-            <h3>${game.name}</h3>
-            <div class="platform">${game.titleid}</div>
-          `;
-          tile.addEventListener('click', () => showModal(game));
-          container.appendChild(tile);
-        });
-    });
-  }
-
-//show epic modals
+function loadCategory(gamePaths, containerId) {
+  const container = document.getElementById(containerId);
+  gamePaths.forEach((path, index) => {
+    fetch(path)
+      .then(res => res.json())
+      .then(game => {
+        const tile = document.createElement('div');
+        tile.className = 'game-tile';
+        tile.style.animationDelay = `${index * 50}ms`; // Staggered pop-in
+        tile.innerHTML = `
+          <img src="${game.front}" alt="${game.name}">
+          <h3>${game.name}</h3>
+          <div class="platform">${game.titleid}</div>
+        `;
+        tile.addEventListener('click', () => showModal(game));
+        container.appendChild(tile);
+      });
+  });
+}
 
 function showModal(game) {
   const modal = document.getElementById('gameModal');
@@ -57,3 +54,34 @@ document.querySelector('.close').addEventListener('click', () => {
   modal.classList.remove('show');
   modal.style.display = 'none';
 });
+
+const repoOwner = 'Nugetinc';
+const repoName = '360-Revitalized';
+
+async function fetchGitHubStats() {
+  const commitsApi = `https://api.github.com/repos/${repoOwner}/${repoName}/commits`;
+
+  try {
+    const response = await fetch(commitsApi);
+    const commits = await response.json();
+
+    const latestCommit = commits[0];
+    const latestMessage = latestCommit.commit.message;
+    const latestAuthor = latestCommit.commit.author.name;
+    const totalCommits = commits.length;
+
+    document.getElementById('githubStats').innerHTML = `
+      <p><strong>Latest Commit:</strong> ${latestMessage}</p>
+      <p><strong>Committer:</strong> ${latestAuthor}</p>
+      <p><strong>Total Commits:</strong> ${totalCommits}</p>
+    `;
+  } 
+  catch (error) {
+    console.error('Error fetching GitHub stats:', error);
+    document.getElementById('githubStats').innerHTML = `
+      <p>Failed to load GitHub stats. Nuget messed something up.</p>
+    `;
+  }
+}
+
+fetchGitHubStats();
