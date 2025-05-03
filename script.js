@@ -6,25 +6,28 @@ fetch('games.json')
     loadCategory(data.dlcs, 'dlcList');
   });
 
-function loadCategory(gamePaths, containerId) {
-  const container = document.getElementById(containerId);
-  gamePaths.forEach((path, index) => {
-    fetch(path)
-      .then(res => res.json())
-      .then(game => {
-        const tile = document.createElement('div');
-        tile.className = 'game-tile';
-        tile.style.animationDelay = `${index * 50}ms`; // Staggered pop-in
-        tile.innerHTML = `
-          <img src="${game.front}" alt="${game.name}">
-          <h3>${game.name}</h3>
-          <div class="platform">${game.titleid}</div>
-        `;
-        tile.addEventListener('click', () => showModal(game));
-        container.appendChild(tile);
-      });
-  });
-}
+  function loadCategory(gamePaths, containerId) {
+    const container = document.getElementById(containerId);
+    gamePaths.forEach((path, index) => {
+      fetch(path)
+        .then(res => res.json())
+        .then(game => {
+          const cover = game.front && game.front.trim() !== '' ? game.front : game.logo;
+  
+          const tile = document.createElement('div');
+          tile.className = 'game-tile';
+          tile.style.animationDelay = `${index * 50}ms`; // Staggered pop-in
+          tile.innerHTML = `
+            <img src="${cover}" alt="${game.name}">
+            <h3>${game.name}</h3>
+            <div class="platform">${game.titleid}</div>
+          `;
+          tile.addEventListener('click', () => showModal(game));
+          container.appendChild(tile);
+        });
+    });
+  }
+  
 
 function showModal(game) {
   const modal = document.getElementById('gameModal');
