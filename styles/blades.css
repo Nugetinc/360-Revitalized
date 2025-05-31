@@ -1,0 +1,264 @@
+@font-face {
+    font-family: 'Xbox360';
+    src: url('../fonts/segoeui.ttf') format('truetype');
+}
+
+body {
+    background: #1a1a1a;
+    font-family: 'Xbox360', 'Segoe UI', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header simulates Xbox blades top bar */
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to right, #107C10, #0a5c0a);
+    padding: 20px;
+    border-bottom: 4px solid #a5ff00;
+    box-shadow: inset 0 -3px 0 #0f0, 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.header h1 {
+    font-size: 28px;
+    margin: 0;
+    color: #ffffff;
+    text-shadow: 1px 1px 0 #000;
+    font-weight: bold;
+}
+
+.header p {
+    font-size: 14px;
+    color: #bfffbf;
+    margin-top: 6px;
+}
+
+/* UI Style Switcher */
+.ui-style-switcher {
+    background: #107C10;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: black;
+    border-bottom: 3px solid #a5ff00;
+}
+
+.ui-style-switcher select {
+    background: #ffffff;
+    color: black;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 4px 6px;
+    margin-left: 8px;
+}
+
+/* Sort bar similar to Xbox blade section headers */
+.sort-bar {
+    background: #2c2c2c;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #a5ff00;
+    border-bottom: 2px solid #444;
+}
+
+/* Blade section titles */
+.category h2 {
+    background: linear-gradient(to right, #107C10, #0f8d1f);
+    padding: 10px 20px;
+    font-size: 20px;
+    color: black;
+    margin: 0;
+    text-transform: uppercase;
+    box-shadow: inset 0 -2px 0 #003300;
+}
+
+/* Grid of game tiles simulates Xbox cards in blades */
+.game-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: #1c1c1c;
+}
+
+/* Game "blade tile" */
+.game-tile {
+    width: 160px;
+    background: linear-gradient(to bottom, #e0ffe0, #d0ffd0);
+    color: black;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    border: 2px solid #107C10;
+    box-shadow: 0 2px 8px rgba(0, 255, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: blade-slide-in 0.4s ease forwards;
+    opacity: 0;
+}
+
+.game-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #00ff00;
+}
+
+.game-tile img {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #107C10;
+}
+
+.game-tile h3 {
+    font-size: 14px;
+    margin: 8px 0 4px;
+    color: #000;
+}
+
+.game-tile .platform {
+    font-size: 12px;
+    color: #107C10;
+    font-weight: bold;
+}
+
+/* Modal popup */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #222;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 20px #0f0;
+}
+
+.modal-logo {
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.screenshot-gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    justify-content: center;
+    padding: 10px;
+}
+
+.screenshot-gallery img {
+    height: 120px;
+    border: 2px solid #107C10;
+    border-radius: 4px;
+}
+
+/* Modal close button */
+.close {
+    font-size: 24px;
+    color: #a5ff00;
+    cursor: pointer;
+    float: right;
+}
+
+/* Download button */
+.download-btn {
+    background: #107C10;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+    background: #0a5c0a;
+    transform: scale(1.05);
+}
+
+/* GitHub stats panel */
+.github-stats {
+    background: #111;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    border-top: 2px solid #107C10;
+}
+
+/* Blade-style animation */
+@keyframes blade-slide-in {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.game-tile {
+    opacity: 0;
+    animation: blade-slide-in 0.5s ease forwards;
+}
+
+/* Universal easing */
+* {
+    transition: all 0.2s ease;
+}
+
+.ui-style-switcher {
+  background: #2a4d19;
+  padding: 12px 20px;
+  border-bottom: 2px solid #a6ff00;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  box-shadow: inset 0 0 5px #0f0f0f;
+}
+
+.ui-style-switcher label {
+  text-shadow: 1px 1px 2px black;
+}
+
+.ui-style-switcher select {
+  appearance: none;
+  background: linear-gradient(to bottom, #4e9a38, #2a4d19);
+  color: #ffffff;
+  font-family: 'Xbox360', 'Segoe UI', sans-serif;
+  border: 2px solid #a6ff00;
+  border-radius: 3px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3), inset 0 0 4px #1e1e1e;
+}
+
+.ui-style-switcher select:hover {
+  background: linear-gradient(to bottom, #6fd650, #3e6f26);
+}
+
+.ui-style-switcher select:focus {
+  outline: none;
+  box-shadow: 0 0 8px #a6ff00;
+}

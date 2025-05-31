@@ -1,0 +1,275 @@
+@font-face {
+    font-family: 'Xbox360';
+    src: url('fonts/segoeui.ttf') format('truetype');
+}
+
+body {
+    
+    background: linear-gradient(to bottom, #39393b, #9d9d9d, #7e7e80);
+    background-size: cover;
+    color: black;
+    font-family: 'Xbox360', 'Segoe UI', sans-serif;
+    margin: 10;
+    overflow-x: visible;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e1e1e;
+    padding: 10px 20px;
+    border-bottom: 2px solid #107c10;
+}
+
+.header h1 {
+    font-size: 22px;
+    color: white;
+    font-weight: normal;
+}
+
+.header p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Sort Bar */
+.sort-bar {
+    background: #333;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: white;
+    border-bottom: 2px solid #107c10;
+}
+
+.sort-bar strong {
+    color: #32cd32;
+}
+
+.game-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.game-tile {
+    width: 160px;
+    background: white;
+    padding: 10px;
+    border-radius: 1px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+    border: 2px solid transparent;
+}
+
+.game-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    border-color: #32cd32;
+}
+
+.game-tile img {
+    width: 100%;
+    border-radius: 1px;
+}
+
+.game-tile h3 {
+    font-size: 14px;
+    margin: 8px 0 4px;
+    font-weight: normal;
+    color: black;
+}
+
+.game-tile .platform {
+    font-size: 12px;
+    color: #32cd32;
+    font-weight: bold;
+}
+
+.game-tile .rating {
+    font-size: 12px;
+    color: #fff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); 
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    background: #2f2f2f;
+    border-radius: 10px;
+    padding: 30px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.modal.show .modal-content {
+    opacity: 1;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ccc;
+}
+
+.download-btn {
+    display: inline-block;
+    text-align: center;
+    background: #107c10;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background: #0e6c0e;
+}
+
+.category {
+    margin: 20px 0;
+}
+
+.category h2 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.game-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.modal-logo {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto 20px;
+    border-radius: 4px;
+}
+
+.screenshot-gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+    justify-content: center;
+}
+
+.screenshot-gallery img {
+    height: 120px;
+    border-radius: 3px;
+    border: 2px solid #107c10;
+    transition: transform 0.3s ease;
+}
+
+.screenshot-gallery img:hover {
+    transform: scale(1.10);
+}
+
+* {
+    transition: all 0.2s ease;
+}
+
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.03); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.header h1 {
+    animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes tile-pop {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.game-tile {
+    animation: tile-pop 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* Modal pop-in animation */
+@keyframes modal-pop {
+    0% {
+        transform: scale(1.0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal.show .modal-content {
+    animation: modal-pop 0.4s ease forwards;
+}
+
+/* Button hover glow effect */
+.download-btn {
+    transform: scale(1);
+    transition: background 1.05s ease, transform 1.1s ease;
+}
+
+.download-btn:hover {
+    background: #0e6c0e;
+    transform: scale(1.10);
+    box-shadow: 0 0 8px #32cd32;
+}
+
+.github-stats {
+    background: #1e1e1e;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 2px solid #107c10;
+    margin-top: 20px;
+}
+
+.github-stats p {
+    margin: 5px 0;
+}

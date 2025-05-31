@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Xbox 360 NXE - Game Marketplace</title>
+  <link rel="stylesheet" href="styles/nxe.css">
+</head>
+<body>
+
+  <div class="nxe-header">
+    <div class="left-menu">
+      <ul>
+        <li>Game Add-Ons</li>
+        <li>Arcade</li>
+        <li class="selected">All Games</li>
+      </ul>
+    </div>
+    <div class="top-info">
+      <h1>Game Marketplace</h1>
+      <p>Download games, add-ons, demos, and other related content</p>
+    </div>
+  </div>
+
+  <section class="category-carousel">
+    <div class="category-card" data-category="browse">
+      <img src="icons/browse.png" alt="Browse">
+      <span>Browse</span>
+    </div>
+    <div class="category-card" data-category="new">
+      <img src="icons/new.png" alt="All New Arrivals">
+      <span>All New Arrivals</span>
+    </div>
+    <div class="category-card" data-category="top">
+      <img src="icons/top.png" alt="Top Rated">
+      <span>Top Rated</span>
+    </div>
+    <div class="category-card" data-category="popular">
+      <img src="icons/star.png" alt="Most Popular">
+      <span>Most Popular</span>
+    </div>
+    <div class="category-card" data-category="demos">
+      <img src="icons/demo.png" alt="Game Demos">
+      <span>Game Demos</span>
+    </div>
+  </section>
+
+  <section class="loaded-category" id="browseTarget">
+  <h2 id="categoryTitle">Category</h2>
+  <div class="game-grid" id="gameList"></div>
+</section>
+
+<div id="gameModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img id="gameLogo" class="modal-logo" src="" alt="Game Logo">
+    <p id="gameDescription"></p>
+    <div id="gameScreenshots" class="screenshot-gallery"></div>
+    <a id="downloadLink" href="#" target="_blank" class="download-btn">Download</a>
+  </div>
+</div>
+
+
+  <script src="scripts/nxe.js"></script>
+</body>
+</html>

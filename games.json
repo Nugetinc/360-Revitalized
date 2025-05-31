@@ -84,5 +84,13 @@
     "games/58550929.json",
     "games/58550979.json",
     "games/58550995.json"
+  ],
+  "xbla": [
+    "xbla/58410A30.json",
+    "xbla/battleblocktheater.json",
+    "xbla/castlecrashers.json",
+    "xbla/geometrywars2.json",
+    "xbla/minecraft.json",
+    "xbla/shadowcomplex.json"
   ]
 }
