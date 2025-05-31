@@ -17,7 +17,8 @@ Feel free to fork the project and contribute! Whether you're interested in **UI 
 - Complete the core features of the original store, including game browsing and purchasing simulation.
 - Integrate community features like game ratings and reviews.
 - Enhance support for emulation and modern systems.
-
+- Add the rest of the dashboards.
+- 
 ## Request Games:
 You can request games in the issues or contact me on discord. 
 
