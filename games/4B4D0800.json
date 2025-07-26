@@ -1,11 +1,13 @@
 {
     "titleid": "4B4D0800",
     "name": "Saints Row - Gat Out of Hell",
-    "boxart": "https://xboxunity.net/boxart/4B4D0800.jpg",
-    "thumbnail": "https://xboxunity.net/assets/gameicons/4B4D0800.jpg",
+    "front": "https://ia800503.us.archive.org/28/items/xboxunity-covers-fulldump_202311/xboxunity-covers-fulldump/4B4D0800/18922/front.png",
+    "logo": "https://cdn2.steamgriddb.com/logo/ab35c90cecde53440fb7931b7cb5fa7d.png",
     "screenshots": [
-        "https://via.placeholder.com/640x360?text=No+Screenshot+Available"
+        "https://store-images.s-microsoft.com/image/apps.30346.69033272355445898.ea18494c-2b03-45c2-a726-58ebc61c2ec4.68c15e0a-f675-4f82-b6b9-848e592f796c",
+        "https://store-images.s-microsoft.com/image/apps.55779.69033272355445898.ea18494c-2b03-45c2-a726-58ebc61c2ec4.71836828-3eca-4311-9463-6436a76af884",
+        "https://store-images.s-microsoft.com/image/apps.45639.69033272355445898.ea18494c-2b03-45c2-a726-58ebc61c2ec4.e3ec374a-6ee0-4f03-9d5f-65db5c387ac4"
     ],
-    "notes": "THERE IS NO DOWNLOAD LINK FOR THIS GAME YET.",
-    "logo": "https://cdn2.steamgriddb.com/logo/ab35c90cecde53440fb7931b7cb5fa7d.png"
+    "notes": "No notes. This game doesnt appear to have a xenia compatability report. Myrient download as always.",
+    "download": "https://myrient.erista.me/files/Redump/Microsoft%20-%20Xbox%20360/Saints%20Row%20-%20Gat%20out%20of%20Hell%20%28USA%2C%20Europe%29.zip"
 }

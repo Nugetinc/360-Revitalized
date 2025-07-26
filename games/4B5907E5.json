@@ -1,11 +1,13 @@
 {
     "titleid": "4B5907E5",
     "name": "Omerta - City of Gangsters",
-    "boxart": "https://xboxunity.net/boxart/4B5907E5.jpg",
-    "thumbnail": "https://xboxunity.net/assets/gameicons/4B5907E5.jpg",
+    "front": "https://ia800503.us.archive.org/28/items/xboxunity-covers-fulldump_202311/xboxunity-covers-fulldump/4B5907E5/15350/front.png",
+    "logo": "https://cdn2.steamgriddb.com/logo/701e4ca2021d8009e0a093bd3c708420.png",
     "screenshots": [
-        "https://via.placeholder.com/640x360?text=No+Screenshot+Available"
+        "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/208520/ss_d5b6cd4907e9e1561a6ffa04cc489b8f9f5b33aa.600x338.jpg?t=1730293660",
+        "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/208520/ss_34c67bf09eed793813513557752af2a024a44812.600x338.jpg?t=1730293660",
+        "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/208520/ss_241195426dccae3f31cb61ead9f8d33984390c88.600x338.jpg?t=1730293660"
     ],
-    "notes": "THERE IS NO DOWNLOAD LINK FOR THIS GAME YET.",
-    "logo": "https://cdn2.steamgriddb.com/logo/701e4ca2021d8009e0a093bd3c708420.png"
+    "notes": "No notes. This game doesnt appear to have a xenia compatability report. Myrient download as always.",
+    "download": "https://myrient.erista.me/files/Redump/Microsoft%20-%20Xbox%20360/Omerta%20-%20City%20of%20Gangsters%20%28USA%2C%20Europe%29.zip"
 }

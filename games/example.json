@@ -1,14 +1,13 @@
 {
-    "title": "",
-    "description": "",
-    "image": "",
-    "logo": "",
-    "screenshots": [
-      "",
-      "",
-      ""
-    ],
-    "platform": "Xbox 360",
-    "download": ""
-  }
-  
+  "titleid": "",
+  "name": "",
+  "front": "",
+  "logo": "",
+  "screenshots": [
+    "",
+    "",
+    ""
+  ],
+  "notes": "",
+  "download": ""
+}
