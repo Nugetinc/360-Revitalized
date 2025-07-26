@@ -1,4 +1,4 @@
-name: CI with Discord Status
+name: UPDATE
 
 on:
   push:
