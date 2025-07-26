@@ -1,13 +1,42 @@
-uses: sarisia/actions-status-discord@v1
-  if: always()
-  with:
-    webhook: ${{ secrets.DISCORD_WEBHOOK }}
-    status: ${{ job.status }}
-    content: "Hey <@316911818725392384>"
-    title: "deploy"
-    description: "Build and deploy to GitHub Pages"
-    image: ${{ secrets.EMBED_IMAGE }}
-    color: 0x0000ff
-    url: "https://github.com/sarisia/actions-status-discord"
-    username: GitHub Actions
-    avatar_url: ${{ secrets.AVATAR_URL }}
+name: CI with Discord Notification
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      # Add your build/test steps here if you want, or leave empty
+
+      - name: Notify Discord about workflow status
+        if: always()
+        uses: actions/github-script@v6
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          script: |
+            const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+            const conclusion = process.env.GITHUB_JOB_CONCLUSION || 'unknown';
+            const workflow = process.env.GITHUB_WORKFLOW;
+            const repo = process.env.GITHUB_REPOSITORY;
+            const runUrl = `https://github.com/${repo}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+
+            const content = `
+**Workflow:** ${workflow}
+**Status:** ${conclusion}
+**Repository:** ${repo}
+[View Run](${runUrl})
+            `;
+
+            const fetch = require('node-fetch');
+            await fetch(webhookUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ content }),
+            });
