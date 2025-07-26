@@ -1,4 +1,4 @@
-name: CI with Discord Notification
+name: CI with Discord Status
 
 on:
   push:
@@ -12,31 +12,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      # Add your build/test steps here if you want, or leave empty
+      # Your build or test steps go here if you want
 
-      - name: Notify Discord about workflow status
+      - name: Notify Discord with sarisia/action-status-discord
         if: always()
-        uses: actions/github-script@v6
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: sarisia/actions-status-discord@v1
         with:
-          script: |
-            const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
-            const conclusion = process.env.GITHUB_JOB_CONCLUSION || 'unknown';
-            const workflow = process.env.GITHUB_WORKFLOW;
-            const repo = process.env.GITHUB_REPOSITORY;
-            const runUrl = `https://github.com/${repo}/actions/runs/${process.env.GITHUB_RUN_ID}`;
-
-            const content = `
-**Workflow:** ${workflow}
-**Status:** ${conclusion}
-**Repository:** ${repo}
-[View Run](${runUrl})
-            `;
-
-            const fetch = require('node-fetch');
-            await fetch(webhookUrl, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ content }),
-            });
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
