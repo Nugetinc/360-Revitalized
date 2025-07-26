@@ -19,7 +19,7 @@ Feel free to fork the project and contribute! Whether you're interested in **UI 
 - Enhance support for emulation and modern systems.
 - Add the rest of the dashboards.
 - 
-## Request Games:
-You can request games in the issues or contact me on discord. 
+## Build Games:
+You can build games in the issues or contact me on discord. 
 
  
