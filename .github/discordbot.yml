@@ -1,0 +1,44 @@
+name: Notify Discord on Commit
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Discord
+        uses: actions/github-script@v6
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        with:
+          script: |
+            const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+            const commits = context.payload.commits;
+            const repo = context.payload.repository.full_name;
+
+            if (!commits || commits.length === 0) return;
+
+            const lastCommit = commits[commits.length - 1];
+            const filesChanged = lastCommit.added.length + lastCommit.modified.length + lastCommit.removed.length;
+
+            const message = `
+**New Commit**
+${lastCommit.message}
+**Author**
+${lastCommit.author.name}
+**Time**
+${lastCommit.timestamp}
+**Files Changed**
+${filesChanged}
+**Repository:** ${repo}
+            `;
+
+            const fetch = require('node-fetch');
+            await fetch(webhookUrl, {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({ content: message })
+            });
